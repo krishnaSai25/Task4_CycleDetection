@@ -1,0 +1,19 @@
+static boolean hasCycle(SinglyLinkedListNode head) {
+        if (head == null)
+        {
+        return false;
+        }
+    SinglyLinkedListNode temp_node1 = head;
+    SinglyLinkedListNode temp_node2 = head;
+    while ( temp_node2!= null && temp_node2.next != null)
+    {
+        temp_node1 = temp_node1.next;
+        temp_node2 = temp_node2.next;
+        temp_node2=temp_node2.next;
+        if(temp_node1 ==temp_node2)
+        {
+            return true;
+        }
+    }
+    return false;
+}
